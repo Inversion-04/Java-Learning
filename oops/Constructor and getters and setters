@@ -1,0 +1,195 @@
+Car class coding
+
+
+basic getters and setters
+//public class Car {
+//    private String model="ferrari";
+//    private int doors=2;
+//
+//    public void printdata(){
+//        System.out.println("model=" + model + " doors= " +doors);
+//    }
+//
+//    public void setModel(String model){
+//        this.model=model;
+//    }
+//
+//    public void setDoors(int doors) {
+//        this.doors = doors;
+//    }
+//
+//
+//}
+
+1)
+
+//public class Car{
+//    private String Accountnumber;
+//    private double Balance;
+//    private String Name;
+//    private String Email;
+//    private String Phonenumber;
+//
+//
+//
+//    public void setAccountnumber(String accountnumber) {
+//        this.Accountnumber = accountnumber;
+//    }
+//
+//    public void setBalance(double Balance) {
+//        this.Balance = Balance;
+//    }
+//
+//    public void setName(String name) {
+//        this.Name = Name;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.Email = Email;
+//    }
+//
+//    public void setPhonenumber(String Phonenumber) {
+//        this.Phonenumber = Phonenumber;
+//    }
+//
+//    public double getBalance() {
+//        return Balance;
+//    }
+//
+//    public String getName() {
+//        return Name;
+//    }
+//
+//    public String getEmail() {
+//        return Email;
+//    }
+//
+//    public String getPhonenumber() {
+//        return Phonenumber;
+//    }
+//
+//    public String getAccountnumber(){
+//        return Accountnumber;
+//    }
+//
+//
+//    public void fund(double fund){
+//        Balance+=fund;
+//        System.out.println("the previous balance is "+ getBalance() + "new balance is " + Balance  );
+//    }
+//
+//    public void withdrawlfunds(double withdrawalfund){
+//        if(Balance-withdrawalfund<0){
+//            System.out.println("Insufficient funds");
+//        }
+//        else{
+//            System.out.println(withdrawalfund);
+//        }
+//    }
+//
+//}
+
+2)
+
+public class Car{
+    private String name;
+    private double creditLimit;
+    private String emailAddress;
+
+
+
+    public Car(String name,double creditLimit,String emailAddress){
+        this.name=name;
+        this.creditLimit=creditLimit;
+        this.emailAddress=emailAddress;
+    }
+
+    public Car(){
+        this("Ritik Saxena",100000.34,"xyz@xyz.com");
+        
+        System.out.println("Empty Constructor called");
+    }
+
+    public Car(String name,String emailAddress){
+        this(name,2000000.0,emailAddress);
+        System.out.println("this is another constructor");
+    }
+
+
+
+    public double getCreditLimit() {
+        return creditLimit;
+    }
+
+    public String getEmailAddress(){
+        return emailAddress;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public static void main(String[] args) {
+
+    }
+
+}
+
+Main testing
+
+
+1)
+
+//import java.util.Arrays;
+//public class FirstClass{
+//    public static void main(String[] args) {
+////        int[] arr=new int[]{1,2,3};
+////        int[] arr1={1,2,3};
+////        System.out.println(Arrays.equals(arr,arr1));
+//
+//        Car bob=new Car();
+//        bob.setName("bob biswas");
+//        bob.setPhonenumber("95477");
+//        bob.setAccountnumber("ABCDEFG");
+//        bob.setEmail("xyz@xyz.com");
+//        bob.setBalance(1000.0);
+//
+//        bob.withdrawlfunds(100.0);
+//
+//        bob.fund(250);
+//        bob.withdrawlfunds(50);
+//        bob.withdrawlfunds(200);
+//        bob.fund(100);
+//        bob.withdrawlfunds(45.55);
+//        bob.withdrawlfunds(54.46);
+//        bob.withdrawlfunds(45.45);
+//    }
+//}
+
+2)
+
+
+public class FirstClass{
+    public static void main(String[] args) {
+
+
+        Car c1=new Car();
+        System.out.println(c1.getName());
+        System.out.println(c1.getCreditLimit());
+        System.out.println(c1.getEmailAddress());
+
+        System.out.println();
+
+        Car c=new Car("gullu rathor","gulle@gull.com ");
+        System.out.println(c.getName());
+        System.out.println(c.getCreditLimit());
+        System.out.println(c.getEmailAddress());
+
+    }
+}
+
+
+
+
+
+
