@@ -1,0 +1,76 @@
+//ranged sum question
+
+
+//public class FirstClass{
+//    public static void main(String[] args) {
+//        int[] arr={10,20,10,5,15,20};
+//        int n=arr.length;
+//        int[] prefixSum=new int[n];
+//        prefixSum[0]=arr[0];
+//        for(int i=1;i<n;i++){
+//            prefixSum[i]=prefixSum[i-1]+arr[i];
+//        }
+//        for(int x:prefixSum){
+//            System.out.println(x);
+//        }
+//
+//        //System.out.println(prefixSum[5]-prefixSum[1]);
+//    }
+//
+//
+//    //range sum using prefix sum array
+//
+//    //prefixSum[i,j]=prefixsum[j]-prefixsum[i-1]
+//    //sum of  1 4 elements in array is= prefixsum[4]
+////arr[2,5] sum=prefixsum[5]-prefixsum[1]
+//
+//
+//}
+
+
+
+//suffix sum of array
+
+//import java.util.*;
+//public class FirstClass{
+//    public static void main(String[] args) {
+//        int[] arr={2,5,6,1,3};
+//        int[] suffixSum=new int[5];
+//        suffixSum[4]=arr[4];
+//        for(int i=3;i>=0;i--){
+//            suffixSum[i]=suffixSum[i+1]+arr[i];
+//        }
+//        System.out.println(Arrays.toString(suffixSum));
+//
+//    }
+//}
+
+
+//**check array can be breaked into 2 subarrays such thath sum of both array is equal**
+
+public class FirstClass {
+
+    public static boolean isPartion(int[] arr) {
+        int totalsum = 0;
+        int prefsum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            totalsum += arr[i];
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            prefsum += arr[i];
+            int suffixsum = totalsum - prefsum;
+            if (suffixsum == prefsum) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 3,5,6,2,1};
+        System.out.println(isPartion(arr));
+
+    }
+
+}
