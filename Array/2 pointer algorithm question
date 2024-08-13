@@ -1,0 +1,46 @@
+//given a increasing (ascending) array you have to make an array containing squares of elements in increasing order(Ascending order)
+
+example->[-10,-3,-2,1,4,5]
+
+o/p--->[1,4,9,16,25,100]
+
+
+ wee will put 2 pointers 1 at start and other at end we check whether the absolute square of which term is greater we store taht term in ans 
+ array and increment the left pointer if left is greater,if right is greater we store its square in ans array
+ and decrement the right pointer.
+
+
+<= condition is used because we the pointer where we stop ,we need to store its square as well thats why
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] arr=new int[n];
+		for(int i=0;i<n;i++){
+		    arr[i]=sc.nextInt();
+		}
+		int[] ans=new int[n];
+		int k=n-1;
+		int left=0;
+		int right=arr.length-1;
+		while(left<=right){
+		    if(Math.abs(arr[left])> Math.abs(arr[right])){
+		       ans[k--]=arr[left]*arr[left];
+		       left++;
+		    }
+		    else{
+		        ans[k--]=arr[right]*arr[right];
+		        right--;
+		    }
+		}
+		
+		
+		for(int x:ans){
+		    System.out.print(x+" ");
+		}
+	}
+}
